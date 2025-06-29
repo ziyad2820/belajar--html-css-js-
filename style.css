@@ -1,0 +1,91 @@
+/* --- CSS Umum & Reset (Tambahkan di bagian paling atas style.css) --- */
+body {
+    margin: 0; /* Hapus margin default browser */
+    font-family: Arial, sans-serif; /* Font dasar */
+    line-height: 1.6;
+    color: #333; /* Warna teks default */
+    background-color: #f4f4f4;
+}
+
+/* --- Styling untuk Hero Section --- */
+.hero-section {
+    height: 100vh; /* Membuat Hero Section memenuhi 100% tinggi viewport */
+    width: 100%; /* Memenuhi 100% lebar */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/image/gambar-bg.jpg');
+    /* Latar belakang gambar dengan overlay gelap. Ganti URL gambar jika ingin! */
+    background-size: cover; /* Pastikan gambar menutupi seluruh area */
+    background-position: center; /* Posisikan gambar di tengah */
+    display: flex; /* Menggunakan Flexbox untuk penengahan konten */
+    justify-content: center; /* Menengahkan konten secara horizontal */
+    align-items: center; /* Menengahkan konten secara vertikal */
+    text-align: center; /* Teks di tengah */
+    color: white; /* Warna teks putih agar kontras dengan latar belakang gelap */
+    padding: 20px; /* Padding untuk konten di layar kecil */
+    box-sizing: border-box; /* Agar padding tidak menambah lebar/tinggi elemen */
+}
+
+.hero-content {
+    max-width: 800px; /* Batasi lebar konten agar mudah dibaca */
+    padding: 30px; /* Padding di sekitar konten teks */
+    background-color: rgba(0, 0, 0, 0.3); /* Sedikit latar belakang transparan untuk konten */
+    border-radius: 8px; /* Sudut membulat */
+}
+
+.hero-section h1 {
+    font-size: 3.5em; /* Ukuran judul utama */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Memberi efek bayangan pada teks */
+}
+
+.hero-section p {
+    font-size: 1.3em; /* Ukuran sub-headline */
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-button {
+    display: inline-block; /* Agar bisa menerapkan padding dan margin seperti blok */
+    background-color: #007bff; /* Warna biru cerah untuk CTA */
+    color: white; /* Warna teks tombol */
+    padding: 15px 30px; /* Ruang di dalam tombol */
+    text-decoration: none; /* Hilangkan garis bawah default link */
+    border-radius: 8px; /* Sudut tombol membulat */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi saat hover */
+}
+
+.hero-button:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat tombol di-hover */
+    transform: translateY(-3px); /* Memberi efek sedikit naik saat di-hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Bayangan saat di-hover */
+}
+
+/* --- Media Queries untuk Responsif (Penting!) --- */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5em; /* Sesuaikan ukuran judul di layar kecil */
+    }
+    .hero-section p {
+        font-size: 1em; /* Sesuaikan ukuran paragraf */
+    }
+    .hero-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .hero-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 0.9em;
+    }
+    .hero-button {
+        padding: 10px 20px;
+    }
+}
