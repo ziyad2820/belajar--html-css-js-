@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="keyword" content="zyiad,html,portfoio">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
-    <link rel="stylesheet" href="/code/style.css">
+    <meta charset="UTF-8" />
+    <meta name="keyword" content="zyiad,html,portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
 
-    <title>Web-porto</title>
+    <title>Portfolio</title>
 </head>
 
 <body>
-    <nav>
-        <a href="index.html"> HOME</a>
-        <a href="about.html"> ABOUT ME </a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
+    <header class="main-header">
+        <div class="brand-container">
+            <img src="/assets/image/gambar-bg.jpg" alt="not found" class="logo" />
+            <span class="brand-name">PORTFOLIO</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="hero-section">
-        <h1> WEBSITE DAN PORTFOLIO</h1>
-        <p>Disini adalah tempat kami untuk mencatat perjuangan kami dalam memmpelajari membuat website, Kami siap membantu anda jika anda memerlukan nya, Jangan sungkan untuk bertnaya pada kami </p>
-        <a href="#contact-section" class= "hero-button"> contact </a>
-        
-    </section>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1> website & portfolio</h1>
+                <p class="subtittle">Selamat datang di proyek pertama saya,disini saya ingin membantu lebih banyak orang untuk membuat wesitenya sendiri </p>
+            </div>
+            <div class="hero-action">
+                <a href="about.html" class=" btn btn-primary">Tentang saya</a>
+                <a href="contact.html" class="btn btn-secondary">Hubungi saya</a>
+            </div>
+        </section>
 
+        <section class="feature-section">
+            <h2> Mengapa memilih saya</h2>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="icon">
+                        <img src="/assets/image/fast.png" alt="ikon responsive" />
+                    </div>
+                    <h3>Desain Responsive</h3>
+                    <p>Membangun antarmuka yang adaptif dan tampak sempurna di semua ukuran perangkat.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="icon">
+                        <img src="/assets/image/fast.png" alt="ikon performa" />
+                    </div>
+                    <h3>Performa Optimal</h3>
+                    <p>Mengoptimalkan kecepatan loading website untuk pengalaman pengguna yang lebih baik.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="icon">
+                        <img src="/assets/image/fast.png" alt="Ikon Interaktif" />
+                    </div>
+                    <h3>Interaktifitas Dinamis</h3>
+                    <p>Menghidupkan website dengan JavaScript untuk fungsionalitas yang kaya.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="icon">
+                        <img src="/assets/image/fast.png" alt="Ikon Database" />
+                    </div>
+                    <h3>Interaksi Backend</h3>
+                    <p>Berpengalaman menghubungkan frontend dengan layanan backend seperti Supabase.</p>
+                </article>
+
+            </div>
+        </section>
+    </main>
 </body>
 </html>

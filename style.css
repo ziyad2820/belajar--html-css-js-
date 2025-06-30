@@ -1,91 +1,182 @@
-/* --- CSS Umum & Reset (Tambahkan di bagian paling atas style.css) --- */
-body {
-    margin: 0; /* Hapus margin default browser */
-    font-family: Arial, sans-serif; /* Font dasar */
-    line-height: 1.6;
-    color: #333; /* Warna teks default */
-    background-color: #f4f4f4;
+body{
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin:0;
 }
 
-/* --- Styling untuk Hero Section --- */
-.hero-section {
-    height: 100vh; /* Membuat Hero Section memenuhi 100% tinggi viewport */
-    width: 100%; /* Memenuhi 100% lebar */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/image/gambar-bg.jpg');
-    /* Latar belakang gambar dengan overlay gelap. Ganti URL gambar jika ingin! */
-    background-size: cover; /* Pastikan gambar menutupi seluruh area */
-    background-position: center; /* Posisikan gambar di tengah */
-    display: flex; /* Menggunakan Flexbox untuk penengahan konten */
-    justify-content: center; /* Menengahkan konten secara horizontal */
-    align-items: center; /* Menengahkan konten secara vertikal */
-    text-align: center; /* Teks di tengah */
-    color: white; /* Warna teks putih agar kontras dengan latar belakang gelap */
-    padding: 20px; /* Padding untuk konten di layar kecil */
-    box-sizing: border-box; /* Agar padding tidak menambah lebar/tinggi elemen */
+ul{
+    list-style:none;/* Hilangkan bullet point default */
+    padding: 2px;
+    margin: 2px;
 }
 
-.hero-content {
-    max-width: 800px; /* Batasi lebar konten agar mudah dibaca */
-    padding: 30px; /* Padding di sekitar konten teks */
-    background-color: rgba(0, 0, 0, 0.3); /* Sedikit latar belakang transparan untuk konten */
-    border-radius: 8px; /* Sudut membulat */
+a{
+    text-decoration: none; /* Hilangkan garis bawah default pada link */
+    color: inherit; /* Warisi warna teks dari parent */
+}
+/* --- Gaya Header Utama (Kontainer Flex) --- */
+.main-header{
+    display: flex; /* Ini yang membuat header menjadi Flex Container */
+    align-items: center; /* Sejajarkan item secara vertikal di tengah */
+    justify-content: space-between; /* Sebarkan item secara horizontal: brand di kiri, nav di kanan */
+    
+    background-color: #043f83 ; /* Contoh warna latar belakang */
+    padding: 15px 25px; /* Padding atas/bawah dan kiri/kanan */
+    color: white; /* Warna teks default untuk header */
 }
 
-.hero-section h1 {
-    font-size: 3.5em; /* Ukuran judul utama */
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Memberi efek bayangan pada teks */
+.brand-container{
+    display: flex; /* Membuat kontainer brand menjadi Flex Container */
+    align-items: center; /* Sejajarkan item secara vertikal di tengah */
+    gap:10px; /* Jarak antar item di dalam brand-container */
 }
 
-.hero-section p {
-    font-size: 1.3em; /* Ukuran sub-headline */
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+.logo{
+    width: 5%; /* Lebar logo */
+    height: 5%; /* Tinggi logo */
+    border-radius: 50%; /* Membuat logo berbentuk lingkaran */
+}
+.brand-name{
+    font-size: 24px; /* Ukuran font untuk nama brand */
+    font-weight: bold; /* Membuat teks menjadi tebal */
 }
 
-.hero-button {
-    display: inline-block; /* Agar bisa menerapkan padding dan margin seperti blok */
-    background-color: #007bff; /* Warna biru cerah untuk CTA */
-    color: white; /* Warna teks tombol */
-    padding: 15px 30px; /* Ruang di dalam tombol */
-    text-decoration: none; /* Hilangkan garis bawah default link */
-    border-radius: 8px; /* Sudut tombol membulat */
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi saat hover */
+.main-nav ul{
+    display: flex; /* Membuat kontainer nav menjadi Flex Container */
+    gap: 20px; /* Jarak antar item di dalam nav */
 }
 
-.hero-button:hover {
-    background-color: #0056b3; /* Warna lebih gelap saat tombol di-hover */
-    transform: translateY(-3px); /* Memberi efek sedikit naik saat di-hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Bayangan saat di-hover */
+.main-nav a{
+    color: white; /* Warna teks link di dalam nav */
+    font-weight: 500; /* Ukuran font untuk link */
+    transition:color 0.3s ease; /* Transisi warna saat hover */
 }
 
-/* --- Media Queries untuk Responsif (Penting!) --- */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5em; /* Sesuaikan ukuran judul di layar kecil */
-    }
-    .hero-section p {
-        font-size: 1em; /* Sesuaikan ukuran paragraf */
-    }
-    .hero-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-    .hero-content {
-        padding: 20px;
-    }
+.main-nav a:hover{
+    color: #ffcc00; /* Warna teks link saat hover */
 }
 
-@media (max-width: 480px) {
-    .hero-section h1 {
-        font-size: 1.8em;
-    }
-    .hero-section p {
-        font-size: 0.9em;
-    }
-    .hero-button {
-        padding: 10px 20px;
-    }
+.hero-section{
+    background-color: cyan;
+    text-align:center; /* Teks di dalam hero section akan berada di tengah */
+    display:flex; /* Membuat hero section menjadi Flex Container */
+    flex-direction: column; /* Mengatur arah flex menjadi kolom */
+    align-items: center; /* Sejajarkan item secara horizontal di tengah */
+    justify-content: center; /* Sejajarkan item secara vertikal di tengah */
+    padding: 100px 20px; /* Padding atas/bawah dan kiri/kanan */
+    min-height: 400px; /* Tinggi minimum hero section */
+    color: #333; /* Warna teks di dalam hero section */
+}
+
+.hero-content{
+    max-width: 800px; /* Lebar maksimum konten hero */
+    margin:0 auto; /* Pusatkan konten hero */
+}
+
+.hero-section h1{
+    font-size: 3.5em; /* Ukuran font untuk judul hero */
+    margin-bottom: 15px; /* Jarak bawah judul hero */
+    color:black; /* Warna teks judul hero */
+    line-height: 1.2;
+}
+
+.hero-section .subtittle{
+    font-size: 1.5em; /* Ukuran font untuk subjudul hero */
+    margin-bottom: 20px; /* Jarak bawah subjudul hero */
+    color: #555; /* Warna teks subjudul hero */
+    max-width: 700px;
+    margin-left:auto; /* Pusatkan subjudul hero */
+    margin-right:auto; /* Pusatkan subjudul hero */ 
+}
+
+.hero-action{
+    display: flex; /* Membuat kontainer aksi hero menjadi Flex Container */
+    gap: 20px; /* Jarak antar tombol aksi */
+    padding: top 20px;
+    justify-content:center; /* Pusatkan tombol aksi secara horizontal */
+}
+
+.btn{
+    display:inline-block; /* Membuat tombol sebagai elemen blok inline */
+    padding: 10px 20px; /* Padding atas/bawah dan kiri/kanan */
+    background-color: #ffcc00; /* Warna latar belakang tombol */
+    border:none;
+    border-radius: 5px; /* Membuat sudut tombol menjadi melengkung */
+    color: #333; /* Warna teks tombol */
+    font-size: 1.2em; /* Ukuran font untuk tombol */
+    font-weight: bold; /* Membuat teks tombol menjadi tebal */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+    transition: background-color 0.3s ease, transform 0,2 ease,border-color 0,3 ease;/* Transisi warna latar belakang saat hover */
+}
+
+.btn-primary{
+    background-color: #007bff; /* Warna latar belakang untuk tombol primer */
+    color: white; /* Warna teks untuk tombol primer */
+}
+
+.btn-primary:hover{
+    background-color: #0056b3; /* Warna latar belakang tombol saat hover */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.btn-secondary{
+    background-color: #6c757d; /* Warna latar belakang untuk tombol sekunder */
+    color: white; /* Warna teks untuk tombol sekunder */
+}
+
+.btn-secondary:hover{
+    background-color: #5a6268; /* Warna latar belakang tombol sekunder saat hover */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.feature-section{
+    background-color: #043f83 ; /* Contoh warna latar belakang */
+    padding: 80px 20px; /* Padding atas/bawah dan kiri/kanan */
+    text-align: center; /* Teks di dalam fitur akan berada di tengah */
+}
+
+.feature-section h2{
+    font-size: 2.5em; /* Ukuran font untuk judul fitur */
+    margin-bottom: 30px; /* Jarak bawah judul fitur */
+    color: whitesmoke; /* Warna teks judul fitur */
+}
+
+.features-grid{
+    display:grid; /* Membuat kontainer fitur menjadi Grid Container */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px;
+    max-width:1200px ;
+    margin:0 auto; /* Pusatkan kontainer fitur */ 
+}
+
+.feature-card{
+    background-color:#0056b3; /* Warna latar belakang untuk kartu fitur */
+    color: white; /* Warna teks untuk kartu fitur */
+    padding: 30px; /* Padding atas/bawah dan kiri/kanan untuk kartu*/
+    border-radius: 8px; /* Membuat sudut kartu menjadi melengkung */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Bayangan untuk kartu fitur */
+    transition: transform 0.3s ease, box-shadow 0,3s ease; /* Transisi efek zoom saat hover */
+}
+
+.feature-card:hover{
+    transform: translateY(-10px); /* Efek naik saat hover */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* Bayangan lebih dalam saat hover */
+}
+
+.feature-card img{
+    width: 12px; /* Lebar gambar di dalam kartu fitur */
+    height: 120px; /* Tinggi gambar di dalam kartu fitur */
+    margin-bottom: 20px; /* Jarak bawah gambar */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+.feature-card h3{
+    font-size: 1.8em; /* Ukuran font untuk judul fitur */
+    margin-bottom: 15px; /* Jarak bawah judul fitur */
+}
+
+.feature-card p{
+    font-size: 1.1em; /* Ukuran font untuk deskripsi fitur */
+    color: #f0f0f0; /* Warna teks deskripsi fitur */
+    line-height: 1.6; /* Jarak antar baris untuk deskripsi fitur */
 }
