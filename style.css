@@ -45,6 +45,7 @@ a{
     font-weight: bold; /* Membuat teks menjadi tebal */
 }
 
+/* NAVBAR CONTAINER (DESKTOP DEFAULT) */
 .main-nav ul{
     display: flex; /* Membuat kontainer nav menjadi Flex Container */
     gap: 20px; /* Jarak antar item di dalam nav */
@@ -60,6 +61,17 @@ a{
     color: #ffcc00; /* Warna teks link saat hover */
 }
 
+/* HAMBURGER ICON (DEFAULT: TERSEMBUNYI DI DESKTOP) */
+.menu-toggle {
+    display: none; /* Sembunyikan checkbox secara visual */
+}
+
+.hamburger-icon {
+    font-size: 2rem; /* Ukuran ikon hamburger */
+    cursor: pointer; /* Ubah kursor jadi pointer saat di hover */
+    display: none; /* Pastikan ikon terlihat di mobile */
+    color: white;
+}
 /* MOBILE STYLES (Aktif di layar 767px atau lebih sempit) */
 @media (max-width: 767px) {
     .main-header{
