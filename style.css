@@ -1,5 +1,5 @@
 body{
-    background-color: #043f83;
+    background-color:  aqua; /* Warna latar belakang untuk seluruh halaman */
     font-family: Arial, sans-serif;
     margin:0;
 }
@@ -60,6 +60,61 @@ a{
     color: #ffcc00; /* Warna teks link saat hover */
 }
 
+/* MOBILE STYLES (Aktif di layar 767px atau lebih sempit) */
+@media (max-width: 767px) {
+    .main-header{
+        padding: 0.8rem 1rem; /* Padding lebih kecil untuk mobile */
+    }
+    
+    .hamburger-icon {
+        display: block; /* Tampilkan ikon hamburger di mobile */
+    }
+
+    .main-nav {
+        /* Untuk mobile, nav-links akan diposisikan absolut dan disembunyikan */
+        position: absolute;
+        top: 100%; /* Tepat di bawah navbar */
+        left: 0;
+        width: 100%; /* Lebar penuh */
+        background-color: #4a5568; /* Warna latar menu dropdown */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        
+        /* Sembunyikan menu awalnya, geser ke atas 100% dari tingginya */
+        transform: translateY(-100%); 
+        transition: transform 0.3s ease-in-out, max-height 0.3s ease-in-out; /* Animasi geser dan tinggi */
+        z-index: 999; 
+        overflow: hidden; /* Sembunyikan konten yang keluar batas saat transisi */
+        max-height: 0; /* Awalnya tidak ada tinggi */
+    }
+
+    .main-nav  ul {
+        flex-direction: column; /* Link tersusun vertikal */
+        align-items: center; /* Pusatkan link */
+        gap: 0; /* Hapus jarak antar link horizontal */
+    }
+
+    .main-nav  li {
+        width: 100%; /* Agar link mengambil lebar penuh untuk area klik */
+        text-align: center;
+    }
+
+    .main-nav  li a {
+        padding: 1rem 0; /* Padding link mobile */
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* Garis pemisah */
+        border-radius: 0; /* Hapus border radius */
+    }
+
+    .main-nav li:last-child a {
+        border-bottom: none; /* Hapus border di link terakhir */
+    }
+
+    /* CSS-ONLY TOGGLE LOGIC: Ketika checkbox di-check, tampilkan menu */
+    .menu-toggle:checked ~ .main-nav {
+        transform: translateY(0); /* Geser menu ke posisi terlihat */
+        max-height: 300px; /* Berikan max-height agar transisi tinggi berjalan */
+        /* Sesuaikan max-height ini agar cukup menampung semua linkmu */
+    }
+}
 .hero-section{
     background-color: cyan;
     text-align:center; /* Teks di dalam hero section akan berada di tengah */
@@ -341,4 +396,64 @@ footer{
     justify-content:center;
     color: white;
     height:10vh; /* Tinggi footer */
+}
+
+/*bab 2 catatan*/
+.catatan-content{
+    position:relative;
+    top: -90px; /* Posisikan judul sedikit ke atas */
+}
+
+.search-content{
+    position: relative; /* Agar posisi absolut di dalamnya relatif terhadap ini */
+    top:-90px; /* Posisikan pencarian sedikit ke atas */
+    display: flex; /* Membuat kontainer pencarian menjadi Flex Container */
+    justify-content: center; /* Pusatkan konten pencarian secara horizontal */
+    gap: 10px; /* Jarak antar elemen pencarian */
+}
+
+.search-input{
+    width:300px; /* Lebar input pencarian */
+    border-radius:5px; /* Membuat sudut input menjadi melengkung */
+    padding: 10px; /* Padding atas/bawah dan kiri/kanan */
+    border: 1px solid #ccc; /* Border input pencarian */
+    font-size: 16px; /* Ukuran font untuk input pencarian */
+}
+
+.search-button{
+    padding: 10px 20px; /* Padding atas/bawah dan kiri/kanan */
+    background-color: #007bff; /* Warna latar belakang untuk tombol pencarian */
+    color: white; /* Warna teks untuk tombol pencarian */
+    border: none; /* Hilangkan border default */
+    border-radius: 5px; /* Membuat sudut tombol menjadi melengkung */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+    font-size: 16px; /* Ukuran font untuk tombol pencarian */
+}
+
+.catatan-section{
+    position:relative;
+    top: -150px; /* Posisikan konten catatan sedikit ke atas */
+}
+
+.category, .tag, .date{
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin: 2px; /* Jarak antar kategori dan tag */
+}
+
+.category {
+    background-color: #e2e8f0; /* bg-gray-200 */
+    color: #4a5568; /* text-gray-700 */
+}
+
+.tag {
+    background-color: #d1fae5; /* bg-green-100 */
+    color: #065f46; /* text-green-900 */
+}
+
+.date {
+    background-color: #fef2f2; /* bg-red-100 */
+    color: #b91c1c; /* text-red-900 */
 }
