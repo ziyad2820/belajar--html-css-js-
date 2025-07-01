@@ -45,6 +45,18 @@ a{
     font-weight: bold; /* Membuat teks menjadi tebal */
 }
 
+/* HAMBURGER ICON (DEFAULT: TERSEMBUNYI DI DESKTOP) */
+.menu-toogle{
+    display: none; /* Sembunyikan hamburger icon di desktop */
+}
+
+.hamburger-icon{
+    display:none; /* Sembunyikan hamburger icon di desktop */
+    font-size:2rem;
+    cursor:pointer;
+    color:white;
+}
+
 /* NAVBAR CONTAINER (DESKTOP DEFAULT) */
 .main-nav ul{
     display: flex; /* Membuat kontainer nav menjadi Flex Container */
@@ -59,29 +71,16 @@ a{
 
 .main-nav a:hover{
     color: #ffcc00; /* Warna teks link saat hover */
-}
+}   
 
-/* HAMBURGER ICON (DEFAULT: TERSEMBUNYI DI DESKTOP) */
-.menu-toggle {
-    display: none; /* Sembunyikan checkbox secara visual */
-}
-
-.hamburger-icon {
-    font-size: 2rem; /* Ukuran ikon hamburger */
-    cursor: pointer; /* Ubah kursor jadi pointer saat di hover */
-    display: none; /* Pastikan ikon terlihat di mobile */
-    color: white;
-}
 /* MOBILE STYLES (Aktif di layar 767px atau lebih sempit) */
 @media (max-width: 767px) {
     .main-header{
-        padding: 0.8rem 1rem; /* Padding lebih kecil untuk mobile */
-    }
-    
+    padding:0.8rem 13rem; /* Padding atas/bawah dan kiri/kanan untuk header */
+}
     .hamburger-icon {
         display: block; /* Tampilkan ikon hamburger di mobile */
     }
-
     .main-nav {
         /* Untuk mobile, nav-links akan diposisikan absolut dan disembunyikan */
         position: absolute;
@@ -98,19 +97,17 @@ a{
         overflow: hidden; /* Sembunyikan konten yang keluar batas saat transisi */
         max-height: 0; /* Awalnya tidak ada tinggi */
     }
-
-    .main-nav  ul {
+    .man-nav ul {
         flex-direction: column; /* Link tersusun vertikal */
         align-items: center; /* Pusatkan link */
         gap: 0; /* Hapus jarak antar link horizontal */
     }
-
-    .main-nav  li {
+    .main-nav li {
         width: 100%; /* Agar link mengambil lebar penuh untuk area klik */
         text-align: center;
     }
 
-    .main-nav  li a {
+    .main-nav li a {
         padding: 1rem 0; /* Padding link mobile */
         border-bottom: 1px solid rgba(255,255,255,0.1); /* Garis pemisah */
         border-radius: 0; /* Hapus border radius */
@@ -119,14 +116,14 @@ a{
     .main-nav li:last-child a {
         border-bottom: none; /* Hapus border di link terakhir */
     }
-
-    /* CSS-ONLY TOGGLE LOGIC: Ketika checkbox di-check, tampilkan menu */
-    .menu-toggle:checked ~ .main-nav {
+    .menu-toggle:checked ~ .nav-links {
         transform: translateY(0); /* Geser menu ke posisi terlihat */
         max-height: 300px; /* Berikan max-height agar transisi tinggi berjalan */
         /* Sesuaikan max-height ini agar cukup menampung semua linkmu */
     }
 }
+
+
 .hero-section{
     background-color: cyan;
     text-align:center; /* Teks di dalam hero section akan berada di tengah */
